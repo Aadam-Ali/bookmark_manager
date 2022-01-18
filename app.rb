@@ -15,4 +15,16 @@ class BookmarkManager < Sinatra::Base
     @bookmarks = Bookmarks.all
     erb :bookmarks
   end
+
+  post '/bookmarks/new' do
+    Bookmarks.create(params[:address])
+    redirect '/bookmarks'
+
+  end
+
+  get '/bookmarks/new' do
+    erb :"bookmarks/new"
+  end
+
+  
 end
