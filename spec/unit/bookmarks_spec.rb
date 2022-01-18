@@ -1,8 +1,17 @@
 require 'bookmarks'
 
 describe Bookmarks do 
-  it 'returns a list of bookmarks' do 
-    my_bookmarks = Bookmarks.all
-    expect(my_bookmarks).to eq ['www.github.com', 'www.slack.com']
+  it 'returns a list of bookmarks' do
+    connection = PG.connect(dbname: 'bookmark_manager_test')
+
+    connection.exec("INSERT INTO bookmarks (url) VALUES ('http://www.makersacademy.com/');")
+    connection.exec("INSERT INTO bookmarks (url) VALUES('http://www.destroyallsoftware.com');")
+    connection.exec("INSERT INTO bookmarks (url) VALUES('http://www.google.com/');")
+
+    bookmarks = Bookmarks.all
+    
+    expect(bookmarks).to include "http://www.makersacademy.com/"
+    expect(bookmarks).to include "http://www.destroyallsoftware.com"
+    expect(bookmarks).to include "http://www.google.com/"
   end 
 end 
