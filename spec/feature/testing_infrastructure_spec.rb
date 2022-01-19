@@ -10,9 +10,9 @@ feature "Viewing bookmarks" do
 
     connection = PG.connect(dbname: 'bookmark_manager_test')
 
-    Bookmarks.create('http://www.makersacademy.com/')
-    Bookmarks.create('http://www.destroyallsoftware.com')
-    Bookmarks.create('http://www.google.com/')
+    Bookmark.create('http://www.makersacademy.com/')
+    Bookmark.create('http://www.destroyallsoftware.com')
+    Bookmark.create('http://www.google.com/')
     
     visit ('/bookmarks') 
     

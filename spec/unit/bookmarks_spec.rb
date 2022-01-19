@@ -1,12 +1,12 @@
-require 'bookmarks'
+require 'bookmark'
 
-describe Bookmarks do 
+describe Bookmark do 
   it 'returns a list of bookmarks' do
-    Bookmarks.create('http://www.makersacademy.com/')
-    Bookmarks.create('http://www.destroyallsoftware.com')
-    Bookmarks.create('http://www.google.com/')
+    Bookmark.create('http://www.makersacademy.com/')
+    Bookmark.create('http://www.destroyallsoftware.com')
+    Bookmark.create('http://www.google.com/')
 
-    bookmarks = Bookmarks.all
+    bookmarks = Bookmark.all
     
     expect(bookmarks).to include "http://www.makersacademy.com/"
     expect(bookmarks).to include "http://www.destroyallsoftware.com"
@@ -14,7 +14,7 @@ describe Bookmarks do
   end 
 
   it "creates a bookmark" do
-    Bookmarks.create('www.test.com')
-    expect(Bookmarks.all).to include ('www.test.com')
+    Bookmark.create('www.test.com')
+    expect(Bookmark.all).to include ('www.test.com')
   end
 end 
