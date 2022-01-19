@@ -10,14 +10,14 @@ feature "Viewing bookmarks" do
 
     connection = PG.connect(dbname: 'bookmark_manager_test')
 
-    Bookmark.create('http://www.makersacademy.com/')
-    Bookmark.create('http://www.destroyallsoftware.com')
-    Bookmark.create('http://www.google.com/')
+    Bookmark.create('Makers', 'http://www.makersacademy.com/')
+    Bookmark.create('Destroy', 'http://www.destroyallsoftware.com')
+    Bookmark.create('Google', 'http://www.google.com/')
     
     visit ('/bookmarks') 
     
-    expect(page).to have_content "http://www.makersacademy.com/"
-    expect(page).to have_content "http://www.destroyallsoftware.com"
-    expect(page).to have_content "http://www.google.com/"
+    expect(page).to have_link "Makers", href: "http://www.makersacademy.com/"
+    expect(page).to have_link "Destroy", href: "http://www.destroyallsoftware.com"
+    expect(page).to have_link "Google", href: "http://www.google.com/"
   end 
 end 
