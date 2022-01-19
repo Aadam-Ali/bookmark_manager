@@ -2,12 +2,9 @@ require 'bookmarks'
 
 describe Bookmarks do 
   it 'returns a list of bookmarks' do
-    connection = PG.connect(dbname: 'bookmark_manager_test')
-
     Bookmarks.create('http://www.makersacademy.com/')
     Bookmarks.create('http://www.destroyallsoftware.com')
     Bookmarks.create('http://www.google.com/')
-
 
     bookmarks = Bookmarks.all
     

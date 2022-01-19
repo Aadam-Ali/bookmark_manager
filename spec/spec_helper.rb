@@ -9,9 +9,6 @@ require_relative 'clear_test_database'
 
 ENV['RACK_ENV'] = 'test'
 
-
-
-
 require_relative '../app'
 
 Capybara.app = BookmarkManager
@@ -31,9 +28,9 @@ Capybara.app = BookmarkManager
 #
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 RSpec.configure do |config|
- config.before(:each) do
-  clear_db
- end
+  config.before(:each) do
+    clear_db
+  end
   # rspec-expectations config goes here. You can use an alternate
   # assertion/expectation library such as wrong or the stdlib/minitest
   # assertions if you prefer.

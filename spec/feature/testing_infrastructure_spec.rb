@@ -5,7 +5,6 @@ feature "Testing infrastructure" do
   end
 end
 
-
 feature "Viewing bookmarks" do 
   scenario "Be able to view saved bookmarks" do 
 
@@ -22,5 +21,3 @@ feature "Viewing bookmarks" do
     expect(page).to have_content "http://www.google.com/"
   end 
 end 
-
-

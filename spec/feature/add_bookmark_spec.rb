@@ -4,6 +4,5 @@ feature 'Add new bookmark' do
     fill_in 'address', with: 'www.test.com'
     click_button ('Submit')
     expect(page).to have_content 'www.test.com'
-
   end
 end
