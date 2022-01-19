@@ -1,20 +1,20 @@
 # Bookmark Manager
 
-User Story 
+User Stories
 ```
 As a user
 So that I can easily visit websites I enjoy
 I would like to view a list of saved bookmarks
 
 As a user
-So I can add sites to my bookmarks to use later
-I need to be able to create new bookmarks
+So that I can add websites I enjoy
+I would like to view create new bookmarks
 ```
 As a user so that I can visit websites I enjoy looking at I would like to be able to view a list of saved bookmarks. 
 
 ![Domain Model](BookmarkDiagram.png)
 
-# Setup for production
+# Setup for Production
 
 1. Connect to PostgreSQL
 
@@ -40,7 +40,7 @@ $ \c bookmark_manager;
 $ \i db/migrations/database_setup.sql
 ```
 
-# Setup for test
+# Setup for Test
 
 1. Connect to PostgreSQL
 
